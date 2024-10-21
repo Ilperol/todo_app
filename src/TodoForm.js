@@ -8,6 +8,7 @@ const TodoForm = () => {
     <div>
       <h2>Create New TODO</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      
       <div>
         <input
           type="text"
@@ -16,14 +17,16 @@ const TodoForm = () => {
           onChange={handleChangeTitle}
         />
       </div>
+      
       <div>
         <input
           type="number"
-          placeholder="ID (optional)"
-          value={id !== null ? id : ''}
-          onChange={handleChangeId}
+          placeholder="Todo ID"
+          value={id !== null ? id : ''}          		 	 	
+	  onChange={handleChangeId}
         />
       </div>
+      
       <button onClick={createTodo}>Add Todo</button>
     </div>
   );
