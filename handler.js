@@ -3,22 +3,21 @@ const { v4: uuidv4 } = require('uuid');
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-// Create a new ToDo item
 module.exports.createTodo = async (event) => {
   const data = JSON.parse(event.body);
 
   if (!data.name) {
     return {
       statusCode: 400,
-      body: JSON.stringify({ error: '"name" field is required' }),
+      body: JSON.stringify({ error: 'name is required' }),
     };
   }
 
   const params = {
     TableName: process.env.TODOS_TABLE,
     Item: {
-      id: data.id,  // Generate a unique ID for each ToDo item
-      name: data.name,  // Store the name attribute as part of the ToDo
+      id: data.id,
+      name: data.name,
       checked: false,
       createdAt: new Date().toISOString(),
     },
