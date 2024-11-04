@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import useCreateTodo from './useCreateTodo';
 
 const TodoForm = () => {
@@ -22,8 +22,8 @@ const TodoForm = () => {
         <input
           type="number"
           placeholder="Todo ID"
-          value={id !== null ? id : ''}          		 	 	
-	  onChange={handleChangeId}
+          value={id !== null ? id : ''}
+          onChange={handleChangeId}
         />
       </div>
       
